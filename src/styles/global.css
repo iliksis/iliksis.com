@@ -1,0 +1,15 @@
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter/Inter-VariableFont_opsz,wght.ttf") format("ttf");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+a[href^="https"] {
+  text-decoration-thickness: 2px;
+}
+
+a[href^="https"]:not(:has(img)):hover {
+  text-decoration-line: underline;
+}

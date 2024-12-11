@@ -1,45 +1,105 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="iliksis.com">
-  <main class="flex flex-col items-center justify-center h-full">
-    <h1
-      class="text-7xl font-bold lowercase text-gray-950 cursor-default select-none coming-soon"
+  <h1 class="font-bold text-5xl">Hello there</h1>
+  <p class="text-2xl py-8">
+    My name is <span class="normal-case">Tobi</span> and I'm a
+    <a
+      class="font-mono text-green-600 font-semibold"
+      href="https://github.com/iliksis"
+      target="_blank">software engineer</a
+    > and <a
+      class="text-purple-400 italic font-semibold"
+      href="https://speedrun.com/iliksis"
+      target="_blank">speedrunner</a
     >
-      Coming soon
-    </h1>
-  </main>
+  </p>
+  <div class="w-full h-0.5 bg-zinc-700 my-2 rounded-full"></div>
+  <h2 class="font-semibold text-2xl mt-8">Skills</h2>
+  <p class="py-8 flex flex-row gap-4 flex-wrap">
+    <Image
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg"
+      alt="The icon for the C# programming language"
+      width="48"
+      height="48"
+      class="inline-block"
+      title="C#"
+      loading="eager"
+    />
+    <Image
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg"
+      alt="The icon for the dotnet core framework"
+      width="48"
+      height="48"
+      class="inline-block"
+      title=".NET Core"
+      loading="eager"
+    />
+    <Image
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+      alt="The icon for HTML"
+      width="48"
+      height="48"
+      class="inline-block"
+      title="HTML"
+      loading="eager"
+    />
+    <Image
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+      alt="The icon for CSS"
+      width="48"
+      height="48"
+      class="inline-block"
+      title="CSS"
+      loading="eager"
+    />
+    <Image
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+      alt="The icon for the tailwindcss framework"
+      width="48"
+      height="48"
+      class="inline-block"
+      title="TailwindCSS"
+      loading="eager"
+    />
+    <Image
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+      alt="The icon for TypeScript programming language"
+      width="48"
+      height="48"
+      class="inline-block"
+      title="TypeScript"
+      loading="eager"
+    />
+    <Image
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+      alt="The icon for the React library"
+      width="48"
+      height="48"
+      class="inline-block"
+      title="React"
+      loading="eager"
+    />
+    <Image
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/svelte/svelte-original.svg"
+      alt="The icon for the Svelte framework"
+      width="48"
+      height="48"
+      class="inline-block"
+      title="Svelte"
+      loading="eager"
+    />
+    <Image
+      src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/astro/astro-original.svg"
+      alt="The icon for the Astro framework"
+      width="48"
+      height="48"
+      class="inline-block"
+      title="Astro"
+      loading="eager"
+    />
+  </p>
 </Layout>
-
-<script>
-  const maxRotate = 45;
-  document.addEventListener("mousemove", function (e) {
-    const comingSoon = document.querySelector<HTMLElement>(".coming-soon");
-    if (comingSoon) {
-      const x = e.clientX / window.innerWidth;
-      const y = e.clientY / window.innerHeight;
-
-      const perspective = window.innerWidth * 4;
-
-      const angleX = maxRotate * x - maxRotate / 2;
-      const angleY = (maxRotate * y - maxRotate / 2) * -1;
-
-      comingSoon.style.transform = `perspective(${perspective}px) rotateX(${angleY}deg) rotateY(${angleX}deg)`;
-    }
-  });
-
-  document.addEventListener("mouseleave", function () {
-    const comingSoon = document.querySelector<HTMLElement>(".coming-soon");
-    if (comingSoon) {
-      comingSoon.style.transform =
-        "perspective(0px) rotateX(0deg) rotateY(0deg)";
-    }
-  });
-</script>
-
-<style>
-  .coming-soon {
-    text-shadow: 0px 0px 10px theme("colors.gray.50");
-  }
-</style>
